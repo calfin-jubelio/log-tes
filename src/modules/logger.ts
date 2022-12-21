@@ -1,5 +1,4 @@
-import { CONFIG } from "../utils/config";
-import { ENABLE_LOG, LOGGER_STATUS } from "./enum/logger";
+import {LOGGER_STATUS } from "./enum/logger";
 import { v4 as uuid } from "uuid";
 import { ILoggerEntity } from "./interfaces/logger";
 
@@ -7,35 +6,27 @@ class Logger implements ILoggerEntity {
   public username: string;
   public activity: string;
   public service: string;
-  public request: { [k: string]: any };
-  public response: { [k: string]: any };
+  public request:any;
+  public response: any;
 
   constructor(params: ILoggerEntity) {
-    this.activity = params.activity;
-    this.username = params.username;
     this.service = params.service;
-    this.request = params.request;
-    this.response = params.response;
+    this.username = params.username;
   }
 
-  log(status: LOGGER_STATUS, is_active: ENABLE_LOG) {
-    if (is_active === ENABLE_LOG.ACTIVE) {
+  log(status: LOGGER_STATUS, activity:string, request:any, response:any) {
+
       return {
         uuid: uuid(),
-        elastic_json: {
-          status: status,
-          activity: this.activity,
-          username: this.username,
-          service: this.service,
-          request: this.request,
-          response: this.response,
-        },
+        status: status,
+        service: this.service,
+        username: this.username,
+        activity: activity,
+        request: request,
+        response: response,
         log_date: new Date(),
       };
-    } else {
-    }
   }
 }
-
 
 export {Logger}
