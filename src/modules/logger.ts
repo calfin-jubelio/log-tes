@@ -4,10 +4,7 @@ import { ILoggerEntity } from "./interfaces/logger";
 
 class Logger implements ILoggerEntity {
   public username: string;
-  public activity: string;
   public service: string;
-  public request:any;
-  public response: any;
 
   constructor(params: ILoggerEntity) {
     this.service = params.service;
@@ -28,5 +25,4 @@ class Logger implements ILoggerEntity {
       };
   }
 }
-
 export {Logger}
