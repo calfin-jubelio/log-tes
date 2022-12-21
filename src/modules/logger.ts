@@ -1,5 +1,5 @@
 import { CONFIG } from "../utils/config";
-import { LOGGER_STATUS } from "./enum/logger";
+import { ENABLE_LOG, LOGGER_STATUS } from "./enum/logger";
 import { v4 as uuid } from "uuid";
 import { ILoggerEntity } from "./interfaces/logger";
 
@@ -18,8 +18,8 @@ class Logger implements ILoggerEntity {
     this.response = params.response;
   }
 
-  log(status: LOGGER_STATUS) {
-    if (CONFIG.ENABLE_LOG) {
+  log(status: LOGGER_STATUS, is_active: ENABLE_LOG) {
+    if (is_active === ENABLE_LOG.ACTIVE) {
       return {
         uuid: uuid(),
         elastic_json: {
