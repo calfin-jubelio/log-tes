@@ -1,7 +1,7 @@
 {
-  "name": "jubelio-activity-log",
+  "name": "kels-log",
   "version": "1.0.0",
-  "description": "this package for logging jubelio activity",
+  "description": "this package for logging activity",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
