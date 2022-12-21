@@ -37,4 +37,5 @@ class Logger implements ILoggerEntity {
   }
 }
 
-export default Logger;
+
+export {Logger}
