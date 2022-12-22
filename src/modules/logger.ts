@@ -1,7 +1,7 @@
 import {v4 as uuid} from 'uuid'
-import LogModel from '../models/logger'
 import { LOGGER_STATUS } from './enum/logger'
 import  '../config/database'
+import LogModel from '../models/logger'
 
 let username:string
 let service:string
@@ -22,6 +22,15 @@ export const log = async(status:LOGGER_STATUS,activity:string, request:any,respo
       response: response,
       log_date: new Date(),
   }
-  await LogModel.create(payload)
+  const log = await LogModel.create({
+      uuid: payload.uuid,
+      status: payload.status,
+      service: payload.service,
+      username: payload.username,
+      activity: payload.activity,
+      request: payload.request,
+      response: payload.response,
+      log_date: payload.log_date,
+  })
   return payload
 }

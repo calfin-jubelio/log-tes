@@ -1,6 +1,6 @@
-import { Schema, Model, model } from 'mongoose'
+import mongoose from 'mongoose'
 
-const LogSchema: Schema = new Schema(
+const LogSchema = new mongoose.Schema(
     {
         uuid: {type:String},
         status: {type:String},
@@ -14,6 +14,6 @@ const LogSchema: Schema = new Schema(
 
 )
 
-const LogModel = model('log', LogSchema);
+const LogModel = mongoose.model('log', LogSchema);
 
 export default LogModel
