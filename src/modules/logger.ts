@@ -1,28 +1,26 @@
-import {LOGGER_STATUS } from "./enum/logger";
-import { v4 as uuid } from "uuid";
-import { ILoggerEntity } from "./interfaces/logger";
+import {v4 as uuid} from 'uuid'
+import LogModel from '../models/logger'
+import { LOGGER_STATUS } from './enum/logger'
 
-class Logger implements ILoggerEntity {
-  public username: string;
-  public service: string;
+let username:string
+let service:string
 
-  constructor(params: ILoggerEntity) {
-    this.service = params.service;
-    this.username = params.username;
-  }
-
-  log(status: LOGGER_STATUS, activity:string, request:any, response:any) {
-
-      return {
-        uuid: uuid(),
-        status: status,
-        service: this.service,
-        username: this.username,
-        activity: activity,
-        request: request,
-        response: response,
-        log_date: new Date(),
-      };
-  }
+export const initiate = (user:string, serv:string) => {
+    username = user
+    service = serv
 }
-export {Logger}
+
+export const log = (status:LOGGER_STATUS,activity:string, request:any,response:any) => {
+  let payload = {
+      uuid: uuid(),
+      status: status,
+      service: username,
+      username: service,
+      activity: activity,
+      request: request,
+      response: response,
+      log_date: new Date(),
+  }
+  LogModel.create(payload)
+  return payload
+}
