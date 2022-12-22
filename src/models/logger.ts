@@ -1,7 +1,5 @@
 import { Schema, Model, model } from 'mongoose'
 
-
-
 const LogSchema: Schema = new Schema(
     {
         uuid: {type:String},

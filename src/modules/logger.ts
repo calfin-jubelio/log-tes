@@ -10,7 +10,7 @@ export const initiate = (user:string, serv:string) => {
     service = serv
 }
 
-export const log = (status:LOGGER_STATUS,activity:string, request:any,response:any) => {
+export const log = async(status:LOGGER_STATUS,activity:string, request:any,response:any) => {
   let payload = {
       uuid: uuid(),
       status: status,
@@ -21,6 +21,6 @@ export const log = (status:LOGGER_STATUS,activity:string, request:any,response:a
       response: response,
       log_date: new Date(),
   }
-  LogModel.create(payload)
+  await LogModel.create(payload)
   return payload
 }
