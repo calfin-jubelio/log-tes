@@ -1,6 +1,7 @@
 import {v4 as uuid} from 'uuid'
 import LogModel from '../models/logger'
 import { LOGGER_STATUS } from './enum/logger'
+import  '../config/database'
 
 let username:string
 let service:string
