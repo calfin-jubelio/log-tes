@@ -1,6 +1,6 @@
 {
   "name": "kels-log",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "this package for logging activity",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -14,6 +14,7 @@
   "license": "ISC",
   "devDependencies": {
     "@types/mongoose": "^5.11.97",
+    "@types/pg": "^8.6.5",
     "@types/uuid": "^9.0.0",
     "i": "^0.3.7",
     "npm": "^9.2.0",
@@ -27,6 +28,7 @@
     "fastify": "^4.10.2",
     "fastify-plugin": "^4.4.0",
     "mongoose": "^6.8.1",
+    "pg": "^8.8.0",
     "uuid": "^9.0.0",
     "winston": "^3.8.2",
     "winston-elasticsearch": "^0.17.1"
