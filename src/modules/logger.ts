@@ -15,8 +15,8 @@ export const log = async(status:LOGGER_STATUS,activity:string, request:any,respo
   let payload = {
       uuid: uuid(),
       status: status,
-      service: username,
-      username: service,
+      service: service,
+      username: username,
       activity: activity,
       request: request,
       response: response,

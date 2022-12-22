@@ -1,7 +1,7 @@
 import mongoose  from 'mongoose'
 
 const dbConnector = async () => {
-    await mongoose.connect(`mongodb://localhost:27017/property`).then(db => {
+    await mongoose.connect('mongodb+srv://werich01:Msklg2022@musikologi.0e3mj.mongodb.net/?retryWrites=true&w=majority').then(db => {
         console.log('connect')
     }).catch(error => console.log(error))
 
