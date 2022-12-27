@@ -7,12 +7,12 @@ let username:string
 let service:string
 
 
-export const initiate = (user:string, serv:string) => {
+const initiate = (user:string, serv:string) => {
     username = user
     service = serv
 }
 
-export const log = async(status:LOGGER_STATUS,activity:string, request:any,response:any)=>  {
+const log = async (status:LOGGER_STATUS,activity:string, request:any,response:any)=>  {
   let payload = {
       uuid: uuid(),
       status: status,
@@ -32,4 +32,9 @@ const insertDoc = async function(indexName:string, uuid:string, data:any){
       id: uuid,
       body: data
   });
+}
+
+export {
+  initiate,
+  log
 }
