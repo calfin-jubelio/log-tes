@@ -1,23 +1,25 @@
-import { LOGGER_STATUS } from './modules/enum/logger'
-import log from './modules/logger'
+export * from './modules/logger'
 
-import { client } from "./config/es-database";
+// import { LOGGER_STATUS } from './modules/enum/logger'
+// import log from './modules/logger'
 
-
-const start = async() => {
-   const loger = await log(LOGGER_STATUS.SUCCESS,"delete product", {
-        title:"tidak ada rumah",
-        price:500000,
-        created:{"name": "calfin", uuid:"eff0-fe43-fdef-343ffef-fefsf"}
-    }, {title:"tidak ada rumah",
-    price:500000,
-    created:{"name": "calfin", uuid:"eff0-fe43-fdef-343ffef-fefsf"}} )
-    console.log(loger,'log')
-    return loger
-}
+// import { client } from "./config/es-database";
 
 
-start()
+// const start = async() => {
+//    const loger = await log(LOGGER_STATUS.SUCCESS,"delete product", {
+//         title:"tidak ada rumah",
+//         price:500000,
+//         created:{"name": "calfin", uuid:"eff0-fe43-fdef-343ffef-fefsf"}
+//     }, {title:"tidak ada rumah",
+//     price:500000,
+//     created:{"name": "calfin", uuid:"eff0-fe43-fdef-343ffef-fefsf"}} )
+//     console.log(loger,'log')
+//     return loger
+// }
+
+
+// start()
 
 // import {test} from './models/es-logger'
 // test()
