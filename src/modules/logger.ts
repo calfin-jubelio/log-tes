@@ -12,7 +12,7 @@ export const initiate = (user:string, serv:string) => {
     service = serv
 }
 
-async function log(status:LOGGER_STATUS,activity:string, request:any,response:any)  {
+export const log = async(status:LOGGER_STATUS,activity:string, request:any,response:any)=>  {
   let payload = {
       uuid: uuid(),
       status: status,
@@ -33,7 +33,3 @@ const insertDoc = async function(indexName:string, uuid:string, data:any){
       body: data
   });
 }
-
-
-
-export default log
