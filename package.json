@@ -1,6 +1,6 @@
 {
   "name": "kels-log",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "this package for logging activity",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

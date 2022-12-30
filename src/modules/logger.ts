@@ -16,8 +16,8 @@ const log = async (status:LOGGER_STATUS,activity:string, request:any,response:an
   let payload = {
       uuid: uuid(),
       status: status,
-      service: "post service",
-      username: "calfin",
+      service: service,
+      username: username,
       activity: activity,
       request: request,
       response: response,
